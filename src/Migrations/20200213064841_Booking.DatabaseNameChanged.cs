@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace booking.Migrations
 {
-    public partial class BookingAppDbContext : Migration
+    public partial class BookingDatabaseNameChanged : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

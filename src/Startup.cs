@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Booking.Services;
 
 
 namespace Booking
@@ -27,7 +28,8 @@ namespace Booking
         {
             services.AddDbContext<AppDbContext>(opts =>
                 opts.UseNpgsql(Configuration["ConnectionStrings:Booking"]));
-
+            
+            services.AddScoped<SalonService>();
             services.AddControllers();
         }
 

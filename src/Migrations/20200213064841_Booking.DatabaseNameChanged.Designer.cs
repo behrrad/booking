@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace booking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200203131307_Booking.AppDbContext")]
-    partial class BookingAppDbContext
+    [Migration("20200213064841_Booking.DatabaseNameChanged")]
+    partial class BookingDatabaseNameChanged
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
