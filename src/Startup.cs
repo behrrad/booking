@@ -31,6 +31,7 @@ namespace Booking
             
             services.AddScoped<SalonService>();
             services.AddControllers();
+            services.AddScoped<SeatService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

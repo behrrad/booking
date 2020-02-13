@@ -16,20 +16,21 @@ namespace Booking.Services
         }
         public int createSalon(Salon salon){
             if(salon.Id != 0){
-                return 0;
+                return 400;
             }
             else if(salon.SeatHeight <= 0){
-                return 0;
+                return 400;
             }
             else if(salon.SeatWidth <= 0){
-                return 0;
+                return 400;
             }
             else if(salon.Name.Length == 0){
-                return 0;
+                return 400;
             }
+            
             dbContext.salons.Add(salon); 
             dbContext.SaveChanges();   
-            return 1;
+            return 200;
         }
         
     }
