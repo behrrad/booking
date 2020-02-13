@@ -14,10 +14,22 @@ namespace Booking.Services
         public SalonService (AppDbContext dbContext) { 
             this.dbContext = dbContext;
         }
-        public void createSalon(Salon salon){
-            
+        public int createSalon(Salon salon){
+            if(salon.Id != 0){
+                return 0;
+            }
+            else if(salon.SeatHeight <= 0){
+                return 0;
+            }
+            else if(salon.SeatWidth <= 0){
+                return 0;
+            }
+            else if(salon.Name.Length == 0){
+                return 0;
+            }
             dbContext.salons.Add(salon); 
             dbContext.SaveChanges();   
+            return 1;
         }
         
     }

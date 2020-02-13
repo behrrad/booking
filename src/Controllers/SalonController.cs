@@ -14,9 +14,12 @@ namespace src.Controllers
         }
         
         [HttpPost]
-        public void Create([FromBody]Salon newSalon){
-            salonService.createSalon(newSalon);
+        public IActionResult Create([FromBody]Salon newSalon){
+            int error = salonService.createSalon(newSalon);
+            if (error == 0){
+                return BadRequest();
+            }
+            return Ok();
         }
-
     }
 }
